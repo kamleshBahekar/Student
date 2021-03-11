@@ -1,0 +1,42 @@
+<div class="row text-center">
+    <div class="col-md-6 m-3">
+        <form [formGroup]="studentForm">
+            <div class="form-group m-2">
+                <input 
+                    type="text" 
+                    class="form-control w-100" 
+                    formControlName="name" 
+                    name="name" 
+                    placeholder="Name">
+            </div>
+            <div class="form-group m-2">
+                <input 
+                    type="text" 
+                    class="form-control w-100" 
+                    formControlName="id" 
+                    name="id" 
+                    placeholder="Student ID"
+                    [readOnly]="isEdit">
+            </div>
+            <div class="form-group m-2"> 
+                <input 
+                    type="text" 
+                    class="form-control w-100" 
+                    formControlName="gender" 
+                    name="gender" 
+                    placeholder="Gender">
+            </div>
+            <div class="form-group m-2">
+                <input 
+                    type="text" 
+                    class="form-control w-100" 
+                    formControlName="address" 
+                    name="address" 
+                    placeholder="Address">
+            </div>            
+          </form>
+    </div>
+</div>
+  <button class="btn btn-primary m-2" (click)="add()"  *ngIf="!isEdit">Add</button>
+  <button class="btn btn-primary m-2" (click)="edit()" *ngIf="isEdit">Edit</button>
+  <button class="btn btn-success" (click)="resetForm()" *ngIf="!isEdit">Reset</button>

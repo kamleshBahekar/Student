@@ -1,0 +1,28 @@
+<div  *ngIf="studentList.length>0" class="text-center">
+  <table class="m-3">
+    <tr>
+      <th>name</th>
+      <th>Id</th> 
+      <th>Gender</th>
+      <th>Address</th>
+      <th>Edit</th>
+    </tr>
+    <tr *ngFor="let student of studentList">
+      <td> {{student.name}}</td>
+      <td>{{student.id}}</td>
+      <td>{{student.gender}}</td>
+      <td>{{student.address}}</td>
+      <td><button class="btn btn-primary" [routerLink]="['/student',student.id]">Edit</button></td>
+     
+    </tr>
+  </table>
+  <!-- <div *ngFor="let student of studentList">
+    <a [routerLink]="['/student',student.id]" style="text-decoration: none;">
+      <p class="w-50">name: {{student.name}}</p>
+      <p class="w-50 text-right">Id: {{student.id}}</p>
+      <p class="w-50">Gender: {{student.gender}}</p>
+      <p class="w-50 text-right">Address: {{student.address}}</p>
+      </a>
+  </div> -->
+</div>
+  <h3 *ngIf="studentList.length==0" class="text-center">Students Not Found</h3>
