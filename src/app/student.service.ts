@@ -23,7 +23,11 @@ export class StudentService {
   studentEdit(student){
     let present: Boolean = false;
     this.studentList.map((val, index)=>{
-      if(val.id == student.id) {this.studentList[index] = student;present=true}
+      if(val.id == student.id) 
+      {
+        this.studentList[index] = student;
+        present=true
+      }
     });
     return present;
 
